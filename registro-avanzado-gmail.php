@@ -808,13 +808,12 @@ class AdvancedRegistrationPlugin {
             if (!$mail_error_captured) {
                 error_log("ARP: Intentando fallback con PHP mail()");
                 
-                $simple_message = "Hola,\n\n";
-                $simple_message .= "Gracias por registrarte en " . $site_name . ". ";
-                $simple_message .= "Para completar tu registro, haz clic en el siguiente enlace:\n\n";
+                $simple_message = $greeting . "\n\n";
+                $simple_message .= $thanks . "\n\n";
                 $simple_message .= $verification_url . "\n\n";
-                $simple_message .= "Este enlace expirará en 24 horas.\n\n";
-                $simple_message .= "Si no creaste una cuenta, puedes ignorar este correo.\n\n";
-                $simple_message .= "Saludos,\n" . $site_name;
+                $simple_message .= $link_expires . "\n\n";
+                $simple_message .= $not_requested . "\n\n";
+                $simple_message .= $site_name;
                 
                 $simple_headers = "From: " . $site_name . " <" . $admin_email . ">\r\n";
                 $simple_headers .= "Reply-To: " . $admin_email . "\r\n";
