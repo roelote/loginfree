@@ -296,8 +296,8 @@ jQuery(document).ready(function($) {
         }
         
         // Mostrar loading
-        var submitBtn = $('.arp-submit-btn');
-        var originalText = submitBtn.text();
+        var submitBtn = $form.find('button[type="submit"]');
+        var originalText = submitBtn.html();
         submitBtn.prop('disabled', true).html('<span class="arp-loading"></span>Enviando verificación...');
         
         $.ajax({
@@ -336,7 +336,7 @@ jQuery(document).ready(function($) {
                 showMessage('error', 'Error de conexión. Inténtalo de nuevo.', 'email-result');
             },
             complete: function() {
-                submitBtn.prop('disabled', false).text(originalText);
+                submitBtn.prop('disabled', false).html(originalText);
             }
         });
     });
