@@ -1,0 +1,297 @@
+/* assets/style.css */
+#arp-registration-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Tabs */
+.arp-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.arp-tab-button {
+    flex: 1;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.arp-tab-button:hover {
+    background: #e9ecef;
+}
+
+.arp-tab-button.active {
+    background: #fff;
+    border-bottom-color: #007cba;
+    color: #007cba;
+}
+
+.arp-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.arp-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Form styles (No se modifican) */
+.arp-form-group {
+    margin-bottom: 20px;
+}
+
+.arp-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.arp-form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.arp-form-group input:focus {
+    outline: none;
+    border-color: #007cba;
+    box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.1);
+}
+
+.arp-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arp-submit-btn:hover {
+    background: #005a87;
+}
+
+.arp-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.arp-resend-btn {
+    background: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arp-resend-btn:hover {
+    background: #138496;
+}
+
+.arp-resend-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Link button para cambiar entre login y registro */
+.arp-link-btn {
+    background: none;
+    border: none;
+    color: #ff8110;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.arp-link-btn:hover {
+    color: #e06f00;
+}
+
+/* Enlace de recuperación de contraseña */
+.arp-forgot-password {
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.arp-forgot-password:hover {
+    color: #ff8110 !important;
+    text-decoration: underline !important;
+}
+
+---
+
+/* ⭐️ ADAPTACIÓN CRÍTICA PARA GOOGLE IDENTITY SERVICES (GIS) ⭐️ */
+
+/* El div contenedor debe ser un flexbox para centrar correctamente 
+el iframe/elemento de Google, ya que no respeta text-align: center.
+*/
+#gmail-signin-button {
+    display: flex; /* Nuevo: Usa flexbox para centrar el contenido */
+    justify-content: center; /* Nuevo: Centra horizontalmente */
+    align-items: center; /* Centra verticalmente (si es necesario) */
+    margin: 20px 0;
+    min-height: 40px; /* Asegura un mínimo de altura antes de cargar */
+}
+
+/* Se elimina todo el estilo del botón manual (.google-signin-btn), 
+ya que Google lo inyecta automáticamente con sus propios estilos. 
+Solo se mantienen los estilos que controlan la apariencia del botón manual 
+que creaste como FALLBACK en tu JS (createManualGoogleButton).
+*/
+.google-signin-btn {
+    /* Mantiene los estilos del fallback manual */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: #4285f4;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.google-signin-btn:hover {
+    background: #357ae8;
+    color: white;
+    text-decoration: none;
+}
+
+.google-signin-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Google Identity Services (GIS) inyecta un iframe con la clase g_iframe. 
+Si necesitas estilizarlo, solo puedes controlar su tamaño y posición, 
+no la apariencia interna (color, fuente, etc.).
+*/
+.g_iframe {
+    margin: 0 !important; /* Asegura que no haya márgenes extraños */
+}
+
+---
+
+/* Messages (No se modifican) */
+.arp-message {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.arp-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.arp-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.arp-message.info {
+    background: #cce7ff;
+    color: #004085;
+    border: 1px solid #b3d4fc;
+}
+
+/* Loading animation */
+.arp-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007cba;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #arp-registration-container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .arp-tab-button {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}
+
+/* Password strength indicator (No se modifican) */
+.password-strength {
+    margin-top: 5px;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.strength-weak { background: #ff4757; width: 25%; }
+.strength-fair { background: #ffa502; width: 50%; }
+.strength-good { background: #2ed573; width: 75%; }
+.strength-strong { background: #1e90ff; width: 100%; }
+
+/* Texto de ayuda */
+.arp-help-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Placeholders más visibles */
+.arp-form-group input::placeholder {
+    color: #999;
+    font-style: italic;
+}
