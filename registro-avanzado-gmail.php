@@ -455,7 +455,7 @@ class AdvancedRegistrationPlugin {
         ));
         
         if ($existing_request) {
-            wp_die(json_encode(array('success' => false, 'message' => 'Ya tienes una solicitud de verificación pendiente. Revisa tu correo electrónico.')));
+            wp_die(json_encode(array('success' => false, 'message' => lf_trans('error_verification_pending'))));
         }
         
         // Usar el nombre proporcionado o generar username desde email
@@ -485,14 +485,15 @@ class AdvancedRegistrationPlugin {
         $verification_sent = $this->send_verification_email($email, $verification_token);
         
         if ($verification_sent) {
+            $message = str_replace('{email}', $email, lf_trans('success_verification_sent'));
             wp_die(json_encode(array(
                 'success' => true, 
-                'message' => '¡Registro iniciado! Hemos enviado un correo de verificación a ' . $email . '. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar tu registro.'
+                'message' => $message
             )));
         } else {
             // Eliminar el registro si no se pudo enviar el correo
             $wpdb->delete($verification_table, array('token' => $verification_token));
-            wp_die(json_encode(array('success' => false, 'message' => 'Error al enviar el correo de verificación. Por favor, inténtalo de nuevo.')));
+            wp_die(json_encode(array('success' => false, 'message' => lf_trans('error_verification_send_failed'))));
         }
     }
     

@@ -81,4 +81,28 @@ return array(
         'fr' => 'Nous vous avons envoyé un lien pour réinitialiser votre mot de passe',
         'it' => 'Ti abbiamo inviato un link per reimpostare la password'
     ),
+    
+    'success_verification_sent' => array(
+        'es' => '¡Registro iniciado! Hemos enviado un correo de verificación a {email}. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar tu registro.',
+        'en' => 'Registration started! We have sent a verification email to {email}. Please check your inbox and click the link to complete your registration.',
+        'pt-br' => 'Registro iniciado! Enviamos um email de verificação para {email}. Por favor, verifique sua caixa de entrada e clique no link para completar seu registro.',
+        'fr' => 'Inscription commencée! Nous avons envoyé un email de vérification à {email}. Veuillez vérifier votre boîte de réception et cliquer sur le lien pour terminer votre inscription.',
+        'it' => 'Registrazione avviata! Abbiamo inviato un\'email di verifica a {email}. Controlla la tua casella di posta e clicca sul link per completare la registrazione.'
+    ),
+    
+    'error_verification_send_failed' => array(
+        'es' => 'Error al enviar el correo de verificación. Por favor, inténtalo de nuevo.',
+        'en' => 'Error sending verification email. Please try again.',
+        'pt-br' => 'Erro ao enviar o email de verificação. Por favor, tente novamente.',
+        'fr' => 'Erreur lors de l\'envoi de l\'email de vérification. Veuillez réessayer.',
+        'it' => 'Errore nell\'invio dell\'email di verifica. Riprova.'
+    ),
+    
+    'error_verification_pending' => array(
+        'es' => 'Ya tienes una solicitud de verificación pendiente. Revisa tu correo electrónico.',
+        'en' => 'You already have a pending verification request. Check your email.',
+        'pt-br' => 'Você já tem uma solicitação de verificação pendente. Verifique seu email.',
+        'fr' => 'Vous avez déjà une demande de vérification en attente. Vérifiez votre email.',
+        'it' => 'Hai già una richiesta di verifica in sospeso. Controlla la tua email.'
+    ),
 );
