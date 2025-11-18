@@ -93,7 +93,8 @@ jQuery(document).ready(function($) {
         
         const id_token = response.credential;
         
-        $('#gmail-result, #gmail-result-comments').html('<div class="arp-message info"><span class="arp-loading"></span>Verificando credenciales con Google...</div>');
+        var verifyingText = arp_ajax.translations.js_verifying_google || 'Verificando credenciales con Google...';
+        $('#gmail-result, #gmail-result-comments').html('<div class="arp-message info"><span class="arp-loading"></span>' + verifyingText + '</div>');
         
         // Detectar si estamos en modo modal (header o comentarios)
         var container = document.getElementById('arp-registration-container');
@@ -228,7 +229,8 @@ jQuery(document).ready(function($) {
         // Mostrar loading
         var submitBtn = $('#email-login-form button[type="submit"]');
         var originalText = submitBtn.text();
-        submitBtn.prop('disabled', true).text('🔄 Iniciando sesión...');
+        var loggingInText = arp_ajax.translations.js_logging_in || '🔄 Iniciando sesión...';
+        submitBtn.prop('disabled', true).text(loggingInText);
         
         $.ajax({
             url: arp_ajax.ajax_url,
@@ -298,7 +300,8 @@ jQuery(document).ready(function($) {
         // Mostrar loading
         var submitBtn = $form.find('button[type="submit"]');
         var originalText = submitBtn.html();
-        submitBtn.prop('disabled', true).html('<span class="arp-loading"></span>Enviando verificación...');
+        var sendingVerificationText = arp_ajax.translations.js_sending_verification || 'Enviando verificación...';
+        submitBtn.prop('disabled', true).html('<span class="arp-loading"></span>' + sendingVerificationText);
         
         $.ajax({
             url: arp_ajax.ajax_url,
@@ -354,7 +357,8 @@ jQuery(document).ready(function($) {
         // Mostrar loading
         var submitBtn = $('#email-forgot-form button[type="submit"]');
         var originalText = submitBtn.text();
-        submitBtn.prop('disabled', true).text('📧 Enviando...');
+        var sendingText = arp_ajax.translations.js_sending || '📧 Enviando...';
+        submitBtn.prop('disabled', true).text(sendingText);
         
         $.ajax({
             url: arp_ajax.ajax_url,
