@@ -700,8 +700,20 @@ class AdvancedRegistrationPlugin {
         error_log("ARP: Intentando enviar correo de verificación a: " . $email);
         
         $verification_url = site_url('/') . '?arp_verify_email=1&token=' . $token;
+        $site_name = get_bloginfo('name');
         
-        $subject = 'Verificación de correo electrónico - ' . get_bloginfo('name');
+        // Obtener traducciones
+        $subject = lf_trans('email_verification_subject') . ' - ' . $site_name;
+        $welcome = str_replace('{site_name}', $site_name, lf_trans('email_welcome'));
+        $confirm_title = lf_trans('email_confirm_title');
+        $greeting = lf_trans('email_greeting');
+        $thanks = lf_trans('email_thanks');
+        $click_button = lf_trans('email_click_button');
+        $verify_button = lf_trans('email_verify_button');
+        $cant_click = lf_trans('email_cant_click');
+        $link_expires = lf_trans('email_link_expires');
+        $not_requested = lf_trans('email_not_requested');
+        $sent_from = str_replace('{site_name}', $site_name, lf_trans('email_sent_from'));
         
         $message = '
         <html>
@@ -733,25 +745,25 @@ class AdvancedRegistrationPlugin {
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>¡Bienvenido a ' . get_bloginfo('name') . '!</h1>
+                    <h1>' . $welcome . '</h1>
                 </div>
                 <div class="content">
-                    <h2>Confirma tu dirección de correo electrónico</h2>
-                    <p>Hola,</p>
-                    <p>Gracias por registrarte en nuestro sitio. Para completar tu registro, necesitamos verificar tu dirección de correo electrónico.</p>
-                    <p>Haz clic en el siguiente botón para confirmar tu cuenta:</p>
+                    <h2>' . $confirm_title . '</h2>
+                    <p>' . $greeting . '</p>
+                    <p>' . $thanks . '</p>
+                    <p>' . $click_button . '</p>
                     <p style="text-align: center;">
-                        <a href="' . $verification_url . '" class="button">Verificar mi correo electrónico</a>
+                        <a href="' . $verification_url . '" class="button">' . $verify_button . '</a>
                     </p>
-                    <p>Si no puedes hacer clic en el botón, copia y pega la siguiente URL en tu navegador:</p>
+                    <p>' . $cant_click . '</p>
                     <p style="word-break: break-all; background-color: #f8f9fa; padding: 10px; border-radius: 4px;">
                         ' . $verification_url . '
                     </p>
-                    <p><strong>Este enlace expirará en 24 horas.</strong></p>
-                    <p>Si no creaste una cuenta en nuestro sitio, puedes ignorar este correo.</p>
+                    <p><strong>' . $link_expires . '</strong></p>
+                    <p>' . $not_requested . '</p>
                 </div>
                 <div class="footer">
-                    <p>Este correo fue enviado desde ' . get_bloginfo('name') . '</p>
+                    <p>' . $sent_from . '</p>
                     <p>' . site_url() . '</p>
                 </div>
             </div>

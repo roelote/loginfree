@@ -99,10 +99,99 @@ return array(
     ),
     
     'error_verification_pending' => array(
-        'es' => 'Ya tienes una solicitud de verificación pendiente. Revisa tu correo electrónico.',
-        'en' => 'You already have a pending verification request. Check your email.',
+        'es' => 'Ya tiene una solicitud de verificación pendiente. Revise su correo electrónico, por favor.',
+        'en' => 'You already have a pending verification request. Check your email, please.',
         'pt-br' => 'Você já tem uma solicitação de verificação pendente. Verifique seu email.',
         'fr' => 'Vous avez déjà une demande de vérification en attente. Vérifiez votre email.',
         'it' => 'Hai già una richiesta di verifica in sospeso. Controlla la tua email.'
+    ),
+    
+    // Traducciones para el correo de verificación
+    'email_verification_subject' => array(
+        'es' => 'Verificación de correo electrónico',
+        'en' => 'Email Verification',
+        'pt-br' => 'Verificação de email',
+        'fr' => 'Vérification d\'email',
+        'it' => 'Verifica email'
+    ),
+    
+    'email_welcome' => array(
+        'es' => '¡Bienvenido a {site_name}!',
+        'en' => 'Welcome to {site_name}!',
+        'pt-br' => 'Bem-vindo ao {site_name}!',
+        'fr' => 'Bienvenue sur {site_name}!',
+        'it' => 'Benvenuto su {site_name}!'
+    ),
+    
+    'email_confirm_title' => array(
+        'es' => 'Confirma tu dirección de correo electrónico',
+        'en' => 'Confirm your email address',
+        'pt-br' => 'Confirme seu endereço de email',
+        'fr' => 'Confirmez votre adresse email',
+        'it' => 'Conferma il tuo indirizzo email'
+    ),
+    
+    'email_greeting' => array(
+        'es' => 'Hola,',
+        'en' => 'Hello,',
+        'pt-br' => 'Olá,',
+        'fr' => 'Bonjour,',
+        'it' => 'Ciao,'
+    ),
+    
+    'email_thanks' => array(
+        'es' => 'Gracias por registrarte en nuestro sitio. Para completar tu registro, necesitamos verificar tu dirección de correo electrónico.',
+        'en' => 'Thank you for signing up on our site. To complete your registration, we need to verify your email address.',
+        'pt-br' => 'Obrigado por se cadastrar em nosso site. Para completar seu registro, precisamos verificar seu endereço de email.',
+        'fr' => 'Merci de vous être inscrit sur notre site. Pour terminer votre inscription, nous devons vérifier votre adresse email.',
+        'it' => 'Grazie per esserti registrato sul nostro sito. Per completare la registrazione, dobbiamo verificare il tuo indirizzo email.'
+    ),
+    
+    'email_click_button' => array(
+        'es' => 'Haz clic en el siguiente botón para confirmar tu cuenta:',
+        'en' => 'Click the button below to confirm your account:',
+        'pt-br' => 'Clique no botão abaixo para confirmar sua conta:',
+        'fr' => 'Cliquez sur le bouton ci-dessous pour confirmer votre compte:',
+        'it' => 'Clicca sul pulsante qui sotto per confermare il tuo account:'
+    ),
+    
+    'email_verify_button' => array(
+        'es' => 'Verificar mi correo electrónico',
+        'en' => 'Verify my email',
+        'pt-br' => 'Verificar meu email',
+        'fr' => 'Vérifier mon email',
+        'it' => 'Verifica la mia email'
+    ),
+    
+    'email_cant_click' => array(
+        'es' => 'Si no puedes hacer clic en el botón, copia y pega la siguiente URL en tu navegador:',
+        'en' => 'If you can\'t click the button, copy and paste the following URL into your browser:',
+        'pt-br' => 'Se você não conseguir clicar no botão, copie e cole a seguinte URL no seu navegador:',
+        'fr' => 'Si vous ne pouvez pas cliquer sur le bouton, copiez et collez l\'URL suivante dans votre navigateur:',
+        'it' => 'Se non riesci a cliccare sul pulsante, copia e incolla il seguente URL nel tuo browser:'
+    ),
+    
+    'email_link_expires' => array(
+        'es' => 'Este enlace expirará en 24 horas.',
+        'en' => 'This link will expire in 24 hours.',
+        'pt-br' => 'Este link expirará em 24 horas.',
+        'fr' => 'Ce lien expirera dans 24 heures.',
+        'it' => 'Questo link scadrà tra 24 ore.'
+    ),
+    
+    'email_not_requested' => array(
+        'es' => 'Si no creaste una cuenta en nuestro sitio, puedes ignorar este correo.',
+        'en' => 'If you didn\'t create an account on our site, you can ignore this email.',
+        'pt-br' => 'Se você não criou uma conta em nosso site, pode ignorar este email.',
+        'fr' => 'Si vous n\'avez pas créé de compte sur notre site, vous pouvez ignorer cet email.',
+        'it' => 'Se non hai creato un account sul nostro sito, puoi ignorare questa email.'
+    ),
+    
+    'email_sent_from' => array(
+        'es' => 'Este correo fue enviado desde {site_name}',
+        'en' => 'This email was sent from {site_name}',
+        'pt-br' => 'Este email foi enviado de {site_name}',
+        'fr' => 'Cet email a été envoyé depuis {site_name}',
+        'it' => 'Questa email è stata inviata da {site_name}'
     ),
 );
