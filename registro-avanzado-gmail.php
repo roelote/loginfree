@@ -599,7 +599,7 @@ class AdvancedRegistrationPlugin {
         
         if ($sent) {
             error_log('✅ Email de recuperación enviado a: ' . $email);
-            wp_die(json_encode(array('success' => true, 'message' => 'Revisa tu email. Te hemos enviado un enlace para restablecer tu contraseña.')));
+            wp_die(json_encode(array('success' => true, 'message' => lf_trans('success_password_reset'))));
         } else {
             error_log('❌ Error al enviar email de recuperación a: ' . $email);
             wp_die(json_encode(array('success' => false, 'message' => 'Error al enviar el email. Inténtalo de nuevo más tarde.')));
