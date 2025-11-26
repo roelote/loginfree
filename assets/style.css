@@ -204,6 +204,21 @@ no la apariencia interna (color, fuente, etc.).
     margin: 0 !important; /* Asegura que no haya márgenes extraños */
 }
 
+/* Aumentar el tamaño del contenedor y botón de Google después del login */
+#gmail-signin-button iframe,
+#gmail-signin-button-comments iframe {
+    min-height: 50px !important; /* Altura mínima del botón */
+    transform: scale(1.15) !important; /* Escala el botón al 115% */
+    transform-origin: center !important;
+}
+
+/* Contenedor con más espacio para el botón escalado */
+#gmail-signin-button,
+#gmail-signin-button-comments {
+    padding: 10px 0 !important;
+    min-height: 60px !important;
+}
+
 ---
 
 /* Messages (No se modifican) */
